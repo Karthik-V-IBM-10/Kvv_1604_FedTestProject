@@ -7,6 +7,24 @@ packages:
   gitUrl: https://github.com/Karthik-V-IBM-10
   gitUsername: Karthik-V-IBM-10
   gitBranch: main
+- name: JMSTest
+  gitServerName: kvv
+  gitUrl: https://github.com/prabhakarsag
+  gitUsername: Karthik-V-IBM-10
+  gitBranch: main
+services:
+- serviceName: project.kvv_1604_fedtest.integrations:refdaf
+  packages:
+  - name: Kvv_1604_FedTestProject
+    version: "1.0"
+  - name: JMSTest
+    version: "1.0"
+- serviceName: project.kvv_1604_fedtest.referencedata:ref1
+  packages:
+  - name: Kvv_1604_FedTestProject
+    version: "1.0"
+  - name: JMSTest
+    version: "1.0"
 configurationVariables:
   jdbc.Embedded-Database-Pool.waitingThread: "0"
   jdbc.SAP-TxStore-Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP-TxStore-Pool.log;ddtdbg.ProtocolTraceShowTime=true
