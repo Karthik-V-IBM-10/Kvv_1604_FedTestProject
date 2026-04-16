@@ -8,20 +8,46 @@ packages:
   gitUsername: Karthik-V-IBM-10
   gitBranch: main
 - name: JMSTest
+  version: "1.0"
+  gitServerName: kvv
+  gitUrl: https://github.com/prabhakarsag
+  gitUsername: Karthik-V-IBM-10
+  gitBranch: main
+- name: JMS2waySSL
   gitServerName: kvv
   gitUrl: https://github.com/prabhakarsag
   gitUsername: Karthik-V-IBM-10
   gitBranch: main
 services:
+- serviceName: project.kvv_1604_fedtest.integrations:JMSFlowTest
+  packages:
+  - name: Kvv_1604_FedTestProject
+    version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
+  - name: JMSTest
+    version: "1.0"
+- serviceName: publisher:publisher
+  packages:
+  - name: JMSTest
+    version: "1.0"
+- serviceName: pub.jms:send
+  packages:
+  - name: WmPublic
+    version: 12.0.0.0.775
 - serviceName: project.kvv_1604_fedtest.integrations:refdaf
   packages:
   - name: Kvv_1604_FedTestProject
+    version: "1.0"
+  - name: JMS2waySSL
     version: "1.0"
   - name: JMSTest
     version: "1.0"
 - serviceName: project.kvv_1604_fedtest.referencedata:ref1
   packages:
   - name: Kvv_1604_FedTestProject
+    version: "1.0"
+  - name: JMS2waySSL
     version: "1.0"
   - name: JMSTest
     version: "1.0"
